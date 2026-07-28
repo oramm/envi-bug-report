@@ -48,7 +48,11 @@ enum: `z.enum([...CORE_TICKET_EVENT_TYPES, 'MY_SYSTEM_EVENT', ...])` and extends
 `TicketTypeSchema` and `TicketSourceSchema` are exported whole, including two values that only make
 sense for one origin system (`OFFER_REQUEST`, `GITHUB_SYNC`). Unlike the status and event-type
 enums, these were **not** split into a core/extension pair for `v0.1.0` — flagged as an open
-question for a later version, not a decision made here.
+question for a later version, not a decision made here. Candidate for a later extraction round:
+whether to split these two into a core/extension pair the way `CORE_TICKET_EVENT_TYPES` already
+is. That decision should wait for a second real consumer of these two schemas — designing the split
+against a single example, before anyone has actually needed the extra values, is how a library ends
+up guessing wrong and needing a breaking patch release.
 
 ## `@envi/bug-report/transitions`
 
