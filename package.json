@@ -1,0 +1,42 @@
+{
+  "name": "@envi/bug-report",
+  "version": "0.1.0",
+  "description": "Shared bug-report loop primitives for ENVI apps: ticket status contracts, transition guards, error fingerprinting and Polish UI text helpers.",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/contracts.js",
+  "types": "./dist/contracts.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/contracts.d.ts",
+      "default": "./dist/contracts.js"
+    },
+    "./transitions": {
+      "types": "./dist/transitions.d.ts",
+      "default": "./dist/transitions.js"
+    },
+    "./fingerprint": {
+      "types": "./dist/fingerprint.d.ts",
+      "default": "./dist/fingerprint.js"
+    },
+    "./text": {
+      "types": "./dist/text.d.ts",
+      "default": "./dist/text.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc",
+    "pretest": "tsc",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0"
+  }
+}
